@@ -1,104 +1,57 @@
- html{
-    box-sizing: border-box;
-    height: 100%;
- }
-
- *,
-*::before,
-*::after{
-    box-sizing: inherit;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
+    min-height: 100vh;
+    display: flex;
     align-items: center;
-    background: linear-gradient(320deg, #92bceb, #78fff4, #9e08cc);
-    display: flex;
-    font-family: 'Dosis', sans-serif;
-    font-display: swapped;
-    height: inherit;
     justify-content: center;
+    background-color: #f1f1f1;
 }
-
-.wrapper{
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rbga(35, 35, 35, 0.1);
-    color: #232323;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    background: rgba(255, 255, 255, 0.30);
-    border: 1px solid rbga(255, 255, 255, 0.34);
-    flex-basis: 400px;
-    height: 540px;
-    padding: 20px 35px;
-}
-
-.screen{
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.01);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1px);
-    color: #232323;
-    font-size: 35px;
-    overflow: auto;
-    padding: 20px;
-    text-align: right;
-    width: 326px;
-}
-
-.calc-button-row{
+.wrapper {
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    margin: 5% 0;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 1),
+        inset 10px 10px 10px rgba(255, 255, 255,0.1);
 }
 
-.calc-button {
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.01);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1px);
-    color: #232323;
-    flex-basis: 20%;
-    font-family: inherit;
-    font-size: 24px;
-    height: 65px;
+.wrapper::before {
+    content: "";
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border-radius:50%;
+    box-shadow: -10px -10px 15px rgba(255, 255, 255,1),
+        inset 10px 10px 10px rgba(255, 255, 255,0.1); 
 }
 
-.calc-button:last-child {
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.01);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1px);
-    color: #fff;
-    background: #45abd3;
+.wrapper span {
+    position: absolute;
+    height: 186px;
+    width: 220px;
+    animation: rotate 5s linear infinite;
 }
 
-.calc-button:last-child:hover{
-    background-color: inherit;
-    color: inherit;
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);filter: hue-rotate(360deg); 
+    }
 }
 
-.calc-button:hover { 
-    background-color: inherit;
-}
 
-.calc-button:active {
-    background-color: #ffef78;
-}
-
-.double {
-    flex-basis: 47%;
-}
-
-.triple {
-    flex-basis: 73%;
+.wrapper span::before {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background: #5c89ff;
+    border-radius: 50%;
 }
